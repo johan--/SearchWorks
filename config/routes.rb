@@ -7,7 +7,27 @@ Rails.application.routes.draw do
   get "view/:id/stackmap" => "catalog#stackmap", :as => :stackmap
   post "catalog/sms" => 'catalog#sms' # we can remove when we upgrade to Blacklight > 5.5.2
 
-  blacklight_for(:catalog)
+  mount Blacklight::Engine => '/'
+
+  concern :searchable, Blacklight::Routes::Searchable.new
+  concern :exportable, Blacklight::Routes::Exportable.new
+
+  resource :catalog, only: [:index], controller: 'catalog' do
+    concerns :searchable
+  end
+
+  resources :solr_documents, only: [:show], controller: 'catalog' do
+    concerns :exportable
+  end
+
+  resources :bookmarks do
+    concerns :exportable
+
+    collection do
+      delete 'clear'
+    end
+  end
+
   Blacklight::Marc.add_routes(self)
   devise_for :users, skip: [:registrations, :passwords, :sessions]
   devise_scope :user do

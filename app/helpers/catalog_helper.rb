@@ -22,7 +22,7 @@ module CatalogHelper
   end
 
   def new_documents_feed_path
-    catalog_index_path(
+    search_catalog_path(
       params.except(:controller, :action, :page).merge(format: 'atom', sort: 'new-to-libs')
     )
   end

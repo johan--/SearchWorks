@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe "Record toolbar", js: true, feature: true do
   before do
-    visit catalog_index_path f: {format: ["Book"]}
+    visit search_catalog_path f: {format: ["Book"]}
     page.find("a", text: "An object").click
   end
 

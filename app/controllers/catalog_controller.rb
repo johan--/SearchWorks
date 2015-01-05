@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 #
 class CatalogController < ApplicationController
+  
+  include Blacklight::Catalog
 
   include Blacklight::Marc::Catalog
-
-  include Blacklight::Catalog
 
   include AdvancedSearchParamsMapping
 
@@ -308,9 +308,6 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
-
-    # Deletes slideshow view
-    config.view.delete_field("slideshow")
 
     # View type group config
     config.view.list.icon_class = "fa-th-list"

@@ -50,7 +50,7 @@ describe 'mobile api', :'data-integration' => true do
 
   describe 'result page' do
     it 'shows correct mobile elements' do
-      visit catalog_index_path(format: 'mobile', q: 'harry')
+      visit search_catalog_path(format: 'mobile', q: 'harry')
       expect(page.body).to have_xml('//response')
       expect(page.body).to have_xml('//LBItem')
       expect(page.body).to have_xml('//title')
@@ -63,20 +63,20 @@ describe 'mobile api', :'data-integration' => true do
     end
 
     it 'shows correct drupal api elements' do
-      visit catalog_index_path(format: 'mobile', drupal_api: true, q: 'harry potter')
+      visit search_catalog_path(format: 'mobile', drupal_api: true, q: 'harry potter')
       expect(page.body).to_not have_xml('//image_url')
       expect(page.body).to_not have_xml('//availability')
       expect(page.body).to_not have_xml('//holding')
-      visit catalog_index_path(format: 'mobile', q: '7155816')
+      visit search_catalog_path(format: 'mobile', q: '7155816')
       expect(page.body).to have_xml('//database_url')
     end
 
     it 'shows correct image search elements' do
-      visit catalog_index_path(format: 'mobile', q: 'Birds Eye VIew of San Francisco')
+      visit search_catalog_path(format: 'mobile', q: 'Birds Eye VIew of San Francisco')
       expect(page.body).to have_xml('//response')
       expect(page.body).to have_xml('//LBItem')
       expect(page.body).to have_xml('//title')
-      visit catalog_index_path(format: 'mobile', q: 'Jacobus Houbraken')
+      visit search_catalog_path(format: 'mobile', q: 'Jacobus Houbraken')
       expect(page.body).to have_xml('//response')
       expect(page.body).to have_xml('//LBItem')
     end

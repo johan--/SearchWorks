@@ -14,7 +14,7 @@ describe "MHLD", feature: true, :"data-integration" => true do
   end
   describe "results view", js: true do
     it "should be present in the accordion section" do
-      visit catalog_index_path(q: '492502')
+      visit search_catalog_path(q: '492502')
 
       within(first('.document')) do
         expect(page).to have_content('At the library')

@@ -5,7 +5,7 @@ gem 'sprockets', '~> 2.11.3'
 gem 'i18n'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.5'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.7.2'
 # Use CoffeeScript for .js.coffee assets and views
@@ -76,25 +76,25 @@ gem 'newrelic_rpm'
 
 gem "coderay"
 
-gem 'openseadragon', github: 'sul-dlss/openseadragon-rails', branch: 'ff36-fix'
+gem 'openseadragon', github: 'iiif/openseadragon-rails'
 
 gem 'deprecation'
 
-gem 'blacklight', '~> 5.8.2'
-
+gem 'blacklight', '6.0.0.pre2'
+gem 'rsolr'
 gem "jettywrapper", "~> 1.7"
 gem "devise"
 gem "devise-guests"
 gem 'devise-remote-user'
-gem "blacklight-marc", "~> 5.0"
+gem "blacklight-marc", github: 'projectblacklight/blacklight-marc', branch: 'decouple-blacklight'
 gem "faraday"
-gem "rails_config"
+gem "config"
 gem "mods_display", "0.3.3"
 gem "blacklight-gallery", github: 'projectblacklight/blacklight-gallery'
-gem "blacklight_advanced_search", github: 'projectblacklight/blacklight_advanced_search'
+gem "blacklight_advanced_search", github: 'projectblacklight/blacklight_advanced_search', branch: 'blacklight6'
 gem "font-awesome-sass"
-gem "blacklight_range_limit", github: 'projectblacklight/blacklight_range_limit'
-gem 'blacklight-hierarchy', "~> 0.1.0"
+gem "blacklight_range_limit", github: 'projectblacklight/blacklight_range_limit', branch: 'blacklight6'
+gem 'blacklight-hierarchy', "~> 0.1.0", path: '/Users/cabeer/Projects/projectblacklight/blacklight-hierarchy'
 gem "retina_tag"
 gem 'jquery-datatables-rails', '~> 2.2.1'
 gem 'roadie-rails', '~> 1.0.4'
