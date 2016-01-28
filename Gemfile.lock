@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/cbeer/nom-xml.git
+  revision: bcd88b98eb08e0a6b08882b32f9d19454eb4a8b7
+  branch: debug
+  specs:
+    nom-xml (0.5.4)
+      activesupport (>= 3.2.18)
+      i18n
+      nokogiri
+
+GIT
   remote: git://github.com/projectblacklight/blacklight-gallery.git
   revision: 2f9f342518585a6e48d93a8e4ed5621afcf918a7
   specs:
@@ -218,10 +228,6 @@ GEM
     newrelic_rpm (3.12.0.288)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    nom-xml (0.5.4)
-      activesupport (>= 3.2.18)
-      i18n
-      nokogiri
     orm_adapter (0.5.0)
     parser (2.3.0.2)
       ast (~> 2.2)
@@ -398,6 +404,7 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   nokogiri (~> 1.6.7)
+  nom-xml!
   openseadragon!
   poltergeist (>= 1.8.1)
   rails (= 4.1.14.1)
