@@ -13,4 +13,4 @@ sudo: false
 language: ruby
 cache: bundler
 
-script: bundle exec rspec spec/models/citation_spec.rb
+script: bundle exec rspec -b spec/models/citation_spec.rb:85

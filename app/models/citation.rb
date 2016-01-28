@@ -77,6 +77,12 @@ class Citation
   end
 
   def citations_from_mods
+    puts "document[:modsxml]: #{document[:modsxml]}"
+    puts "nokogiri root: #{Nokogiri::XML(document[:modsxml]).root.inspect}"
+
+    puts "document.mods: #{document.mods.inspect}"
+    puts "document.mods.note: #{document.mods.note.inspect}" if document.mods
+
     return unless document.mods && document.mods.note.present?
     document.mods.note.find do |note|
       note.label.downcase =~ /preferred citation:?/
